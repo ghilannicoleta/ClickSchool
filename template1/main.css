@@ -1,0 +1,77 @@
+body {
+    background-image: url("./banner-ideideafaceri\ copy\ 2.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    color: rgb(12, 138, 111);
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+
+}
+
+.logo {
+    font-size: 30px;
+    color: rgb(20, 8, 87);
+}
+
+
+span {
+    margin-right: 40px;
+    font-size: larger;
+}
+
+.header-batton-while {
+    padding: 5px;
+    background-color: rgb(20, 8, 87);
+    border-radius: 20px;
+    color: white;
+    font-size: large;
+    border: none;
+}
+
+.content {
+    display: table-caption;
+    align-items: center;
+    margin-left: 150px;
+    margin-top: 50px;
+
+}
+
+h1 {
+    font-size: 100px;
+    color: rgb(20, 8, 87);
+    margin-block-end: auto;
+}
+
+h2 {
+    font-size: 30px;
+    margin-block-start: auto;
+}
+
+.content-batton {
+    padding: 5px;
+    background-color: rgb(12, 138, 111);
+    border-radius: 20px;
+    color: white;
+    font-size: large;
+    border: none;
+    margin-top: 5px;
+}
+
+.footer-images {
+    margin-left: 135px;
+    margin-top: 25px;
+}
+
+.img {
+    width: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+p {
+    margin-top: 50px;
+}

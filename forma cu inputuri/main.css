@@ -1,0 +1,45 @@
+body {
+    color: aliceblue;
+    background-color: #252222;
+}
+
+.logo {
+    border-bottom: solid 30px white;
+}
+
+
+
+th:hover {
+    background-color: rgb(95, 87, 84);
+}
+
+table,
+th,
+td {
+    border: solid 1px rgb(252, 249, 249);
+    width: 700px;
+    margin-top: 35px;
+
+}
+
+.button {
+    background-color: rgb(194, 235, 156);
+    padding: 10px;
+    margin: 10px;
+}
+
+.input {
+    display: inline-grid;
+    width: 250px;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+}
+
+.forma {
+    border: solid;
+    width: 48%;
+    margin-top: 30px;
+}
