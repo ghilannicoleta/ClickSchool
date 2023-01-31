@@ -1,0 +1,129 @@
+Avem un array care conține mai multe cuvinte. Pentru fiecare cuvânt, să se afișeze numărul total de litere, numărul vocalelor și cel al consoanelor.
+
+let arr = ['boy', 'girl', 'children', 'mother']
+
+for(let i = 0; i < arr.length; i++){
+    let lettersCount = 0;
+    let vocalCount = 0;
+    let consoaneCount = 0;
+
+    for(let j = 0; j < arr[i].length; j++){
+        lettersCount++;
+        // console.log(arr[i][j])
+        if(['a', 'o', 'e', 'i', 'u'].includes(arr[i][j])){
+            vocalCount++
+        } else {
+            consoaneCount++
+        }
+    }
+    console.log(`cuvinte ${arr[i]} are ${lettersCount} litere, vocale: ${vocalCount}, consoane ${consoaneCount}`)
+}
+
+
+
+
+Olea s-a entuziasmat și mai tare cu numerele palindrom și vrea să țină o evidență cu acestea. Ea s-a gândit să facă o listă cu toate numerele palindrom până la 10000 ca să îi fie mai ușor să le găsească mai târziu.
+
+function checkIsPolindrom(str){
+    let isPolindrom = true;
+
+    for(let i = 0; i < str.length ; i++){
+       if(str[i] != str[str.length - 1 - i]){
+            isPolindrom = false;
+            break
+       }
+    }
+    return isPolindrom
+}
+
+let polindromArr = [];
+
+for(let i = 0; i < 10000; i++){
+    if(checkIsPolindrom(i.toString())){
+      polindromArr.push(i)
+    }
+}
+
+console.log(polindromArr)
+
+
+
+
+
+Carolina trebuie să îl ducă pe Rudy la veterinar și nu vrea să îi mai explice doctorului tot istoricul lui. Ea vrea să creeze o evidență electronică pe care să o poată accesa ușor.
+
+Cerințe:
+Creați un obiect care să conțină informații despre Rudy: rasă, culoarea părului, anul nașterii, vaccinuri și dacă are pașaport sau nu. Creați o funcție care afișează toate aceste informații într-un format care să fie citit ușor de către doctor.
+Creați o funcție în obiect care calculează vârsta lui Rudy și afișați-o în mesaj.
+Rudy a primit recent un vaccin pentru hepatită canină. Adăugați acest vaccin în istoricul medical.
+Afișați un mesaj corespunzător dacă Rudy are voie sau nu să iasă din Moldova (dacă are pașaport).
+Carolina a uitat când i-a făcut celelalte vaccinuri lui Rudy și acum știe că trebuie să pună în istoric data fiecărui vaccin. Actualizați obiectul pentru a conține această informație și creați o funcție care afișează istoricul vaccinării. Dacă nu există niciun vaccin, să se afișeze “Rudy nu a făcut niciun vaccin până acum”.
+
+
+Exercițiul 3 - Rudy
+const rudy = {
+    rasa: 'Rottweiler',
+    culoareaParului: 'negru',
+    anulNasterii: 2020,
+    vaccinuri: ['a1','b2'],
+    arePasaport: true,
+
+    getAge: function(){
+        let currentYear = new Date().getFullYear() 
+        return currentYear - this.anulNasterii
+    },
+
+    addVaccine: function(vaccinName) {
+        this.vaccinuri.push(vaccinName)
+    },
+
+    canLeaveMoldova: function(){
+       return `Rudy ${this.arePasaport ? 'are voie' : 'nu are voie'} să iasă din Moldova`
+    },
+
+    showVaccinHistory: function(){
+        if(this.vaccinuri.length){
+            for (let vaccin of this.vaccinuri ) {
+                console.log(`Vaccin: ${vaccin.denumirea}, Data vaccinului: ${vaccin.data}`)
+            }
+        }else {
+                console.log('Rudy nu a făcut niciun vaccin până acum')
+            }   
+    }
+}
+
+
+function showInfo(obj){
+    return `Date despre pacient: 
+    rasa: ${obj.rasa} 
+    culoarea parului: ${obj.culoareaParului}
+    anul nasterii: ${obj.anulNasterii}
+    vaccinuri: ${obj.vaccinuri}
+    pasaport: ${obj.arePasaport ? 'are' : 'nu are'}` 
+}
+
+console.log(showInfo(rudy));
+
+console.log(rudy.getAge());
+
+rudy.addVaccine('hepatită canină');
+console.log(showInfo(rudy));
+
+console.log(rudy.canLeaveMoldova());
+
+// adauga data vaccinului:
+
+rudy.vaccinuri = rudy.vaccinuri.map((el) => {
+    return {
+        "denumirea": el,
+        "data": '11-11-2020'
+    }
+})
+
+rudy.showVaccinHistory()
+
+
+
+
+
+

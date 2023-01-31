@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <img id="img" src=""/>
+    <button id="btn">Click me</button>
+</body>
+<script>
+    const button = document.getElementById('btn');
+    const img = document.getElementById('img');
+
+    const imgArr = ["https://www.seattleaquarium.org/sites/default/files/images/sea%20otter.png",
+    "https://naldzgraphics.net/wp-content/uploads/2009/12/baby8.jpg", 
+    "https://naldzgraphics.net/wp-content/uploads/2009/12/baby8.jpg" ]
+
+    let imgArrIndex = 0
+
+    img.src = imgArr[imgArrIndex]
+
+
+    button.addEventListener('click', () => {
+        if(imgArrIndex == imgArr.length -1){
+            imgArrIndex = 0
+        }else{
+            imgArrIndex++
+        }
+        img.src = imgArr[imgArrIndex]
+    })
+
+
+</script>
+</html>

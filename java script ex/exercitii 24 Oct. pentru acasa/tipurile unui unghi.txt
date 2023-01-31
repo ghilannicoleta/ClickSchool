@@ -1,0 +1,29 @@
+tipurile unui unghi
+
+Scrieți un program JavaScript pentru a găsi tipurile unui unghi dat.
+• Tipuri de unghiuri:
+• Unghi ascuțit: Un unghi între 0 și 90 de grade.
+• Unghi drept: Un unghi de 90 de grade.
+• Unghi obtuz: Un unghi între 90 și 180 de grade.
+• Unghi  arbitrar: Un unghi de 180 de grade.
+
+
+
+function findUnghiType(unghi) {
+	if(0 <= unghi && unghi < 90){
+		return "Unghi ascuțit"
+	}else if(unghi == 90){
+  	return "Unghi drept"
+  }else if(90 <= unghi && unghi < 180) {
+    return "Unghi obtuz"
+  }else if(unghi == 180){
+  	return "Unghi  arbitrar:"
+  } else{
+  return "Nu este unghi valid"
+  }
+}
+console.log(findUnghiType(60))
+console.log(findUnghiType(90))
+console.log(findUnghiType(130))
+console.log(findUnghiType(180))
+console.log(findUnghiType(-90))

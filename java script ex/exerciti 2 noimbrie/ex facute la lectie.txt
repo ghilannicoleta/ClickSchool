@@ -1,0 +1,44 @@
+Exerciti 02 noiembrie facute la lectie
+
+✅--Transformați elementele unui tablou ce conține cifre într-un număr stocat 
+într-o variabilă. (3, 2, 1 devine 321):
+
+let arrNum = [3, 2, 1];
+let num = arrNum[0];
+
+for(let i = 1; i < arrNum.length; i++){
+    num = num * 10;
+    num = num + arrNum[i]
+}
+console.log(num)
+
+
+let suma=""
+const numere= [4, 5, 6, 7, 8]
+for (let i=0; i < numere.length; i++)  {
+         suma = suma + "" + numere[i];
+    }
+console.log(suma)
+
+
+
+✅--Să scriem o funcție care întoarce ultima cifră a unui număr trimis ca parametru:
+
+function lastNumber(n) {
+   return  n % 10
+}
+
+console.log(lastNumber(64))
+
+
+✅--Să scriem o funcție care verifică dacă un număr trimis ca parametru este divizibil cu 7. Să se verifice pentru 17, 28, 44, 56, 57.
+
+function isDivisibleBySeven(n) {
+    return n % 7 == 0
+}
+
+console.log(isDivisibleBySeven(17));
+console.log(isDivisibleBySeven(28));
+console.log(isDivisibleBySeven(44));
+console.log(isDivisibleBySeven(56));
+console.log(isDivisibleBySeven(57));

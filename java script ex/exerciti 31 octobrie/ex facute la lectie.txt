@@ -1,0 +1,58 @@
+Exerciții facute in la lectie
+
+✅--Pentru un tablou de elemente, afișați dacă numărul
+este par, impar sau zero.
+
+let num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+for(let i = 0; i < num.length; i++){
+	if(i % 2 == 0){
+  	console.log("numar par")
+  }else if(i % 2 != 0){
+  	console.log("numar impar")
+  }
+   if(num[i] === 0){
+ 	 console.log("numar este zero " + num[i])
+  }
+}
+
+
+✅--Afișați elementul minim dintr-un tablou:
+
+let arr = [7, 3,  5, 6, , 1, 9];
+let min = arr[0];
+
+for(let i = 0; i < arr.length; i++){
+    if(min > arr[i]){
+        min = arr[i]
+    }
+}
+console.log(min)
+
+
+✅--Afișați cel mai lung cuvânt dintr-un tablou:
+
+let colors = ['blue', 'orange', 'while', 'purple'];
+let maxStr = colors[0];
+
+for(let color of colors){
+   if(color.length >  maxStr.length){
+       maxStr = color
+       }
+   }
+console.log(maxStr)
+
+
+✅--Afișați un triunghi de caractere * (numărul de rânduri va fi n):
+
+let n = 5;
+
+let stars = '';
+
+for(let i = 0; i <= n; i++){
+    stars = '';
+    for(let j = 0; j < i; j++){
+        stars = stars + ' *'
+    }
+console.log(stars)
+}

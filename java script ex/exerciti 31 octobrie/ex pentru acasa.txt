@@ -1,0 +1,47 @@
+✅-Afișați numerele pare de la 7 pina la 31:
+let n = 37;
+
+for(let i = 7; i <= n; i++){
+	if(i % 2 == 0){
+  	console.log(i)
+  }
+}
+daca restul la inpartire este 0
+
+✅-Afișați numerele impare de la 5 la -20:
+let n = -20;
+
+for(let i = 5; i >= n; i--){
+	if(i % 2 != 0){
+  console.log(i)
+  }
+}
+
+✅-Scrieți un program care va afișa șirul fibonacci pînă la un număr n. Șirul fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34:
+function fibonacci(n)
+{
+    let last = 0;
+    let secondLast = 0;
+    for(let i = 0; i < n ; i++)
+    {
+        let val = last + secondLast;
+       console.log(val);
+        if(!val)
+            last = 1;
+        secondLast = last;
+        last = val;
+    }
+}
+fibonacci(20)
+
+✅Scrieți un program care va determina cel mai mare divizor comun a doua numere a, b:
+let a = 6;
+let b = 12;
+let n = Math.min(a, b);
+
+for(let i = n; i > 0; i--){
+	if(a % i == 0 && b % i == 0){
+		console.log(i);
+		break;
+	}
+}

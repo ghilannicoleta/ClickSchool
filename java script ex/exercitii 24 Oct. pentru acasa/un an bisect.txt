@@ -1,0 +1,13 @@
+un an bisect
+
+Scrieți un program JavaScript pentru a determina dacă un anumit an este un an bisect în calendarul gregorian.
+
+let year = 2001
+
+if(year % 4 == 0 && year % 100 != 0){
+	console.log('an bisect')
+} else if (year % 400 == 0){
+console.log("an bisect")
+} else {
+console.log("an normal")
+}

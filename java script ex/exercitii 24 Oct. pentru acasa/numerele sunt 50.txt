@@ -1,0 +1,20 @@
+numere este 50
+
+Scrieți un program JavaScript pentru a verifica două numere date și a returna adevărat dacă unul dintre numere este 50 sau dacă suma lor este 50.
+
+function checkNumberAndSum(a, b) {
+ if(a == 50 || b == 50){
+  console.log(true);
+}else {
+ console.log("nici a nici b nu este 50");
+}
+
+ if( a + b == 50){
+ console.log("trueSuma");
+} else{
+ console.log("suma nu este 50");
+}
+
+}
+
+checkNumberAndSum(0, 6)

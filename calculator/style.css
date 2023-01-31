@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 300px;
+    background-color: rgb(0 0 0 / 76%);
+    margin: auto;
+    border: 2px solid rgb(6, 17, 16);
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 30px;
+}
+
+input {
+    height: 70px;
+    line-height: 40px;
+    font-size: 35px;
+    width: 100%;
+    border: none;
+    background: #c8c4c4;
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+.buttons {
+    display: grid;
+    border: 1px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.btn {
+    height: 70px;
+    border-radius: 35px;
+    background: rgb(255 255 255 / 57%);
+}
+
+.btn0 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#input{
+    padding-right: 15px;
+    border-radius: 5px;
+}

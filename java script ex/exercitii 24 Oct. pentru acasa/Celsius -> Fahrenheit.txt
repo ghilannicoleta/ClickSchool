@@ -1,0 +1,16 @@
+Celsius -> Fahrenheit
+
+
+Scrieți un program JavaScript pentru a converti temperaturile în și de la Celsius, Fahrenheit.
+
+let celsius = 10;
+let fahrenheit = (celsius * 1.8) + 32;
+console.log(fahrenheit);
+
+
+
+function transformCelsiusToFahrenheit(celsius) {
+  return (celsius * 1.8) + 32
+}
+
+console.log(transformCelsiusToFahrenheit(38))

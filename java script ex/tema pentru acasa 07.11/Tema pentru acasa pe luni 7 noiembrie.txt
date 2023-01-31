@@ -1,0 +1,95 @@
+Tema pentru acasa pe luni 7 noiembrie
+
+
+
+Exercițiul 1 - Calculator BMI (Body Mass Index)
+Luiza și Dima vor să își măsoare Body Mass Index (BMI), care se calculează după formula: BMI = greutate / înălțime * înălțime. Greutatea se va măsura în kg, iar înălțimea în metri.
+
+Cerințe:
+Atribuiți valorile greutății și înălțimii în variabile.
+Calculați BMI cu formula de mai sus.
+Creați o variabilă boolean care să determine dacă BMI-ul lui Dima este mai mare decât al Luizei.
+Afișați în consolă cine are un BMI mai mare și care sunt valorile.
+
+
+
+let greutateLuiza = 50
+let inaltimeLuiza = 1.6
+
+let greutateDima = 64
+let inaltimeDima = 1.9
+
+  function CalcBodyMassIndex(greutate, inaltime){ 
+    return greutate / (inaltime * inaltime)    
+}
+
+let bmiLuiza = CalcBodyMassIndex(greutateLuiza , inaltimeLuiza)
+let bmiDima = CalcBodyMassIndex(greutateDima , inaltimeDima)
+
+let bmiDimaMaiMareCaBmiLuiza = bmiDima > bmiLuiza ? true : false;
+
+console.log(bmiDimaMaiMareCaBmiLuiza)
+
+if(bmiDimaMaiMareCaBmiLuiza){
+    console.log(`Dima are BMI mai mare ca Luiza, egal cu : ${bmiDima}`)
+} else {
+    console.log(`Luiza are BMI mai mare ca Dima, egal cu : ${bmiLuiza}`)
+}
+
+
+
+
+
+Exercițiul 2 - Calculator de tips
+Carolina vrea să aibă un calculator de tips pentru că atunci când iese la restaurant vrea să știe cât trebuie să plătească în funcție de totalul de pe bon. În localurile în care merge ea, valoarea tips este de 15%, dacă nota este între 50 și 800 lei, și de 20% dacă nota este peste 800 lei.
+
+Cerințe:
+Calculați valoarea pentru tips în funcție de totalul notei.
+Afișați în consolă cât este valoarea notei, cea pentru tips și totalul de plătit.
+
+
+function calculatorTips(nota) {
+    let tips = 0;
+    
+    if(nota >= 50 && nota <= 800){
+        tips = (15 / 100) * nota
+    }else if(nota > 800){
+        tips = (20 / 100 ) * nota
+    }
+
+    return tips
+}
+
+console.log(`Tipsul calculat in dependenta de nota este ${calculatorTips(50)}`)
+
+
+function calculatorNotaWihtTips(nota){
+    return calculatorTips(nota) + nota
+}
+
+console.log(`Nota + Tipsul calculata este ${calculatorNotaWihtTips(50)}`)
+
+
+
+
+Lui Olea îi plac numerele palindrom. Un număr este considerat palindrom dacă răsturnatul său (citit de la dreapta la stânga) este egal cu originalul (Exemplu: numărul 12321 este palindrom).
+
+Cerințe:
+Să se determine dacă o variabilă conține o valoare palindrom.
+Afișați în consolă numărul și un mesaj dacă acesta este sau nu palindrom.
+
+
+
+function isPolindrom(str){
+    let polindrom = true;
+
+    for(let i = 0; i < str.length ; i++){
+       if(str[i] != str[str.length - 1 - i]){
+            polindrom = false;
+            break
+       }
+    }
+    return polindrom
+}
+   
+console.log(`Acesta este un cuvint polindrom ${isPolindrom('potop')}`)

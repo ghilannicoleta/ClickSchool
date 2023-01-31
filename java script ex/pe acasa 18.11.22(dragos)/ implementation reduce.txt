@@ -1,0 +1,82 @@
+Here should be implementation for Array.prototype.reduce
+
+const arr = [1, 2, 3];
+
+function myReduce(array, cb, initialValue) {
+    let acc 
+    let index
+
+    if(initialValue){
+        index = 0;
+        acc = initialValue
+    } else{
+        index = 1;
+        acc = arr[0]
+    }
+
+    for(let i = index; i < arr.length; i++){
+            let current = arr[i]
+           acc = cb(acc, current)
+    }
+    return acc
+}
+
+const result6 = myReduce(
+    arr, 
+    (accumulator, current) => accumulator + current,
+    5
+    
+)
+
+console.log(result6);
+
+
+
+
+
+
+const result5 = arr.reduce(
+    (accumulator, current) => accumulator + current
+);
+
+console.log(result5);
+
+
+
+
+
+
+
+
+
+
+
+// Here is our implementation for Array.prototype.map
+
+const arr = [1, 2, 3];
+function myMap(array, cb) {
+   
+  const newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    const index = i;
+    const newValue = cb(element, index, array);
+    newArray.push(newValue);
+  }
+
+  return newArray;
+}
+
+const result3 = arr.map((x, i, arr) => {
+  // console.log(arr);
+  return x * i;
+});
+console.log(result3);
+
+const result4 = myMap(arr, (x, i, arr) => {
+  // console.log(arr);
+  return x * i;
+});
+console.log(result4);
+
+

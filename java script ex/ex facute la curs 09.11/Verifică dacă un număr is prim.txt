@@ -1,0 +1,38 @@
+Creați o funcție care verifică dacă un număr este
+prim. Un număr este prim dacă este divizibil doar cu
+1 și el însuși.
+
+Pentru un tablou de numere, afișați câte dintre
+acestea sunt prime.
+
+function checkIsPrim(n){
+    let isPrim = true;
+
+    for(let i  = 2; i < n -1; i++){
+        if(n % i == 0){
+            isPrim = false;
+            break;
+        }
+    }
+        if(n == 1) {
+            isPrim = false
+        }
+
+    return isPrim
+}
+
+function verificaNumerelePrime(arr){
+    let arePrim = [];
+
+        for(let i = 0; i < arr.length; i++){
+            if(checkIsPrim(arr[i])){
+                arePrim.push(arr[i])
+            }
+        }
+
+        return arePrim
+
+}
+
+console.log(verificaNumerelePrime([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]))
+

@@ -1,0 +1,74 @@
+//    Scrieți un program care va afișa valorile următorului obiect în 
+//    formatul “${title} by ${author} - ${readingStatus}“
+
+const library = [ 
+   {
+       author: 'Bill Gates',
+       title: 'The Road Ahead',
+       readingStatus: true
+   },
+   {
+       author: 'Steve Jobs',
+       title: 'Walter Isaacson',
+       readingStatus: false
+   },
+   {
+       author: 'Suzanne Collins',
+       title:  'Mockingjay: The Final Book of The Hunger Games', 
+       readingStatus: false
+   }];
+
+
+function showMesage(arr){
+    for(let book of arr){
+   console.log(`${book.title } ${book.author} - ${book.readingStatus ? 'read' : 'didnt read'}`)
+   }
+}
+
+
+
+
+
+// Avind o lista de studenti afisati lista studentilor doar 
+// nume/prenume si nota medie
+
+const studenti = [ 
+   {
+       nume: 'Bill',
+       prenume: 'Gates',
+       note: [8, 9, 10, 10, 8]
+   },
+   {
+       nume: 'Olea',
+       prenume: 'Gates',
+       note: [8, 9, 10, 10, 8, 10, 10]
+   },
+   {
+       nume: 'John',
+       prenume: 'Doe',
+       note: [8, 9, 10, 8, 10, 5]
+
+   },
+   {
+       nume: 'Lara',
+       prenume: 'Croft',
+       note: [8, 5, 10, 5, 10, 5]
+
+   }];
+
+   function showStudent(arr){
+        for(let student of arr){
+            let sum = 0;
+            let media = 0;
+
+            for(let i = 0; i < student.note.length; i++){
+                sum = sum + student.note[i]
+            }
+
+            media = sum / student.note.length;
+            console.log(`${student.nume} ${student.prenume} - ${media.toFixed(2)}`)
+    
+        }
+   }
+
+showStudent(studenti)

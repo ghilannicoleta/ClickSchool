@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <input type="text" placeholder="write numbers" id="myInput" />
+        <button id="btn">Submit</button>
+    </div>
+    
+
+    <div class="input-form">
+        <input type="text" placeholder="write numbers" id="myInput2" />
+        <button id="btn2">Submit</button>
+    </div>
+    
+</body>
+    <script>
+        const paragraf = document.createElement("p");
+        const div = document.getElementsByTagName("div")[0];
+        div.appendChild(paragraf);
+        const submitBtn = document.getElementById('btn');
+
+        function isPolindrom(str){
+            let isPolindrom = true;
+
+            for(let i = 0; i < str.length ; i++){
+              if(str[i] != str[str.length - 1 - i]){
+                isPolindrom = false;
+                break
+                }
+            }
+
+        return isPolindrom
+        }
+
+        submitBtn.addEventListener("click", () =>{
+
+            let inputValue = document.getElementById("myInput").value;
+            paragraf.innerHTML = inputValue;
+
+            if(isPolindrom(inputValue)){
+                paragraf.innerHTML = `${inputValue} is polindrom`
+            }else{
+                paragraf.innerHTML = `${inputValue} isn't polindrom`
+            }
+        })
+
+
+
+        const divContent = document.getElementsByClassName("input-form")[0];
+        divContent.style.paddingTop = "40px";
+
+        const paragraf2 = document.createElement("p");
+        const div1 = document.getElementsByTagName("div")[1];
+        div1.appendChild(paragraf2);
+
+        const submitBtn2 = document.getElementById('btn2');
+
+        function estePar (num){
+            return num % 2 == 0
+  	  
+        }
+
+
+        submitBtn2.addEventListener('click', () => {
+
+            let inputValue2 = document.getElementById("myInput2").value;
+            paragraf2.innerHTML = inputValue2;
+
+            if(estePar(inputValue2)){
+                paragraf2.innerHTML = `${inputValue2} este par`
+            }else{
+                paragraf2.innerHTML = `${inputValue2} este inpar`
+            }
+        })
+
+    </script>
+
+</html>
