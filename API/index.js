@@ -5,20 +5,16 @@ const app = express();
 app.use(bodyParser.json());
 
 let products = [
-  { productName: "eggs", quantity: "10", quantityType: "unit" },
-  { productName: "meat", quantity: "1", quantityType: "kilo" },
-  { productName: "milk", quantity: "1", quantityType: "unit" },
-  { productName: "juice", quantity: "2", quantityType: "unit" },
-  { productName: "fish", quantity: "1", quantityType: "kilo" },
-  { productName: "cheese", quantity: "300", quantityType: "grams" },
+  { productName: "eggs", quantity: "10", quantityType: "unit", id: 1 },
+  { productName: "meat", quantity: "1", quantityType: "kilo", id: 2 },
+  { productName: "milk", quantity: "1", quantityType: "unit", id: 3 },
+  { productName: "juice", quantity: "2", quantityType: "unit", id: 4 },
+  { productName: "fish", quantity: "1", quantityType: "kilo", id: 5 },
+  { productName: "cheese", quantity: "300", quantityType: "grams", id: 6 },
 ];
 
 app.get("/", function (req, res) {
   res.send("Hello World......");
-});
-
-app.listen(3001, () => {
-  //   console.log("Listining on : http://localhost:3000");
 });
 
 app.get("/products", (req, res) => {
@@ -36,8 +32,12 @@ app.post("/products", (req, res) => {
 app.delete("/products", (req, res) => {
   //   console.log(req.query.name);
   products = products.filter((product) => {
-    return product.productName !== req.query.name;
+    return product.id != req.query.id;
   });
 
   res.send("Successfully delete");
+});
+
+app.listen(3001, () => {
+  console.log("Listining on : http://localhost:3001");
 });
