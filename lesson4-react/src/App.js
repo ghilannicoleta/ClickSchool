@@ -7,16 +7,17 @@ export default function App() {
   const [inputSurname, setInputSurname] = useState("");
 
   function handleChangeName(event) {
-    setInputName((inputName) => inputName + event.nativeEvent.data);
+    setInputName(event.target.value);
   }
 
   function handleChangeSurname(event) {
-    setInputSurname((inputName) => inputName + event.nativeEvent.data);
+    setInputSurname(event.target.value);
   }
 
   return (
     <div className="App">
       <h1 class="fs-1 text-danger">Lesson 4</h1>
+
       <InputWithClean
         placeholder={"Enter your name"}
         inputName={inputName}
