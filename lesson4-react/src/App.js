@@ -20,21 +20,23 @@ export default function App() {
 
       <InputWithClean
         placeholder={"Enter your name"}
-        inputName={inputName}
-        onChange={(event) => handleChangeName(event)}
+        value={inputName}
+        onChange={handleChangeName}
         clearInput={() => setInputName("")}
       />
       <InputWithClean
         placeholder={"Enter your surname"}
-        inputSurname={inputSurname}
-        onChange={(event) => handleChangeSurname(event)}
+        value={inputSurname}
+        onChange={handleChangeSurname}
         clearInput={() => setInputSurname("")}
       />
+
       <AlertButton
-        inputName={inputName}
-        inputSurname={inputSurname}
-        clearInputName={() => setInputName("")}
-        clearInputSurname={() => setInputSurname("")}
+        value={`${inputName} ${inputSurname}`}
+        afterAlert={() => {
+          setInputName("");
+          setInputSurname("");
+        }}
       />
     </div>
   );
