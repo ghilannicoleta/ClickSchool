@@ -2,6 +2,7 @@ import "./App.css";
 import Sidebar from "./components/Sidebar";
 import UserProfile from "./components/UserProfile";
 import React, { useEffect, useState } from "react";
+import { UserProvider } from "./userContext";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -17,20 +18,22 @@ function App() {
       });
   }, []);
 
-  function onUserSelected(userID) {
-    setSelectedUserId(userID);
-  }
+  // function onUserSelected(userID) {
+  //   setSelectedUserId(userID);
+  // }
 
   return (
     <div className="App">
-      <Sidebar users={users} onUserSelected={onUserSelected} />
+      <UserProvider setSelectedUserId={setSelectedUserId} users={users}>
+        <Sidebar users={users} />
 
-      {selectedUser && (
-        <UserProfile
-          user={selectedUser}
-          setSelectedUserId={setSelectedUserId}
-        />
-      )}
+        {selectedUser && (
+          <UserProfile
+            user={selectedUser}
+            setSelectedUserId={setSelectedUserId}
+          />
+        )}
+      </UserProvider>
     </div>
   );
 }
