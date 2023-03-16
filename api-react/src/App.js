@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       <Sidebar users={users} onUserSelected={onUserSelected} />
 
-      {selectedUserId && (
+      {selectedUser && (
         <UserProfile
           user={selectedUser}
           setSelectedUserId={setSelectedUserId}
