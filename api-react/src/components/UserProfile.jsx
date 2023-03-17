@@ -10,7 +10,6 @@ export default function UserProfile(){
 
     return (
         <div className="bg-indigo-300 rounded-sm p-4 w-[500px]">
-           
             <img className="pb-6 m-[auto]" src={user.image}></img>
             <h2>Name: {user.firstName} {user.lastName}</h2>
             <p>Age: {user.age}</p>
@@ -29,7 +28,6 @@ export default function UserProfile(){
             <button onClick={() => setSelectedUserId(null)} 
             className="border-solid border-2 border-while rounded-lg text-center p-2 mt-4 hover:bg-fuchsia-300" > Clear selected user 
             </button>
-
         </div>
     )
 }
