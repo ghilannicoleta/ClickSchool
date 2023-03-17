@@ -1,11 +1,15 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-export const userContext = createContext();
+export const UserContext = createContext();
 
-export function UserProvider({ children, setSelectedUserId, users }) {
+export function UserProvider({ children, users }) {
+
+  const [selectedUserId, setSelectedUserId] = useState(null);
+
+  const selectUser = users.find((user) => user.id === selectedUserId);
   return (
-    <userContext.Provider value={{setSelectedUserId, usersLength: users.length}}>
+    <UserContext.Provider value={{setSelectedUserId, selectUser, usersCount: users.length}}>
       {children}
-    </userContext.Provider>
+    </UserContext.Provider>
   );
 }

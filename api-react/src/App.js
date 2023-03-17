@@ -6,9 +6,6 @@ import { UserProvider } from "./userContext";
 
 function App() {
   const [users, setUsers] = useState([]);
-  const [selectedUserId, setSelectedUserId] = useState(null);
-
-  const selectedUser = users.find((user) => user.id === selectedUserId);
 
   useEffect(() => {
     fetch("https://dummyjson.com/users")
@@ -24,15 +21,9 @@ function App() {
 
   return (
     <div className="App">
-      <UserProvider setSelectedUserId={setSelectedUserId} users={users}>
+      <UserProvider users={users}>
         <Sidebar users={users} />
-
-        {selectedUser && (
-          <UserProfile
-            user={selectedUser}
-            setSelectedUserId={setSelectedUserId}
-          />
-        )}
+        <UserProfile />
       </UserProvider>
     </div>
   );

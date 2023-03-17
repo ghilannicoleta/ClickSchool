@@ -1,9 +1,9 @@
 import { useContext } from "react"
-import { userContext } from "../userContext"
+import { UserContext } from "../userContext"
 
 export default function UserCount(){
-    const {usersLength} = useContext(userContext)
+    const {usersCount} = useContext(UserContext)
 return (
-    <div>Number of users: {usersLength}</div>
+    <div>Number of users: {usersCount}</div>
 )
 }

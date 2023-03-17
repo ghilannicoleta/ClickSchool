@@ -1,8 +1,16 @@
-export default function UserProfile({user, setSelectedUserId}){
-    return (
-        
-        <div className="bg-indigo-300 rounded-sm p-4 w-[500px]">
+import { useContext } from "react";
+import { UserContext } from "../userContext";
 
+export default function UserProfile(){
+    const {selectUser: user, setSelectedUserId} = useContext(UserContext);
+
+    if(!user){
+        return null
+    }
+
+    return (
+        <div className="bg-indigo-300 rounded-sm p-4 w-[500px]">
+           
             <img className="pb-6 m-[auto]" src={user.image}></img>
             <h2>Name: {user.firstName} {user.lastName}</h2>
             <p>Age: {user.age}</p>
