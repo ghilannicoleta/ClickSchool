@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { UserContext } from "../userContext";
+import { UserContext } from "../context/userContext";
 
 export default function UserProfile(){
     const {selectUser: user, setSelectedUserId} = useContext(UserContext);
@@ -10,7 +10,7 @@ export default function UserProfile(){
 
     return (
         <div className="bg-indigo-300 rounded-sm p-4 w-[500px]">
-            <img className="pb-6 m-[auto]" src={user.image}></img>
+            <img className="pb-6 m-[auto]" alt="User avatar" src={user.image}></img>
             <h2>Name: {user.firstName} {user.lastName}</h2>
             <p>Age: {user.age}</p>
             <p>Gender: {user.gender}</p>

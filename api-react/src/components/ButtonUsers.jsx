@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { UserContext } from "../userContext"
+import { UserContext } from "../context/userContext"
 
 export default function ButtonUsers({user}){
     const {setSelectedUserId} = useContext(UserContext)
